@@ -1,0 +1,13 @@
+rootProject.name = 'cals-platz-crm-sample'
+
+include 'modules:main-structure:framework:web'
+
+/* Business Module */
+include 'modules:app:business:loyalty'
+include 'modules:app:business:membership'
+
+/* Endpoint Module */
+include 'modules:app:endpoint:crm-loyalty-api'
+include 'modules:app:endpoint:crm-membership-api'
+include 'buildsrc'
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/modules" />
+            <option value="$PROJECT_DIR$/modules/app" />
+            <option value="$PROJECT_DIR$/modules/app/business" />
+            <option value="$PROJECT_DIR$/modules/app/business/loyalty" />
+            <option value="$PROJECT_DIR$/modules/app/business/membership" />
+            <option value="$PROJECT_DIR$/modules/app/endpoint" />
+            <option value="$PROJECT_DIR$/modules/app/endpoint/crm-loyalty-api" />
+            <option value="$PROJECT_DIR$/modules/app/endpoint/crm-membership-api" />
+            <option value="$PROJECT_DIR$/modules/main-structure" />
+            <option value="$PROJECT_DIR$/modules/main-structure/framework" />
+            <option value="$PROJECT_DIR$/modules/main-structure/framework/web" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
