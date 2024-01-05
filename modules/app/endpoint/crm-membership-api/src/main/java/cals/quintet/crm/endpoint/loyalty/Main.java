@@ -1,4 +1,4 @@
-package cals.quintet.crm.framework.web;
+package cals.quintet.crm.endpoint.loyalty;
 
 /**
  * @author ${USER}

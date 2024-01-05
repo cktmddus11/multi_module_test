@@ -1,19 +1,17 @@
 plugins {
-    id 'java'
+    id 'groovy-gradle-plugin'
 }
 
-group 'org.example'
-version 'unspecified'
-
 repositories {
-    mavenCentral()
+    gradlePluginPortal() // so that external plugins can be resolved in dependencies section
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.2.1'
+    testImplementation platform("org.spockframework:spock-bom:2.2-groovy-3.0")
+    testImplementation 'org.spockframework:spock-core'
 }
 
-test {
+tasks.named('test', Test) {
     useJUnitPlatform()
 }
