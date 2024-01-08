@@ -1,0 +1,14 @@
+repositories {
+    flatDir {
+        dirs 'shared/libs'
+    }
+//    maven {
+//        credentials {
+//            username "crm-develop"
+//            password "CrmDevelop.!"
+//        }
+//        url "https://crm-devops.calsplatz.com:8088/repository/maven-public/"
+//    }
+    maven { url "https://repo.spring.io/milestone" }
+    mavenCentral()
+}

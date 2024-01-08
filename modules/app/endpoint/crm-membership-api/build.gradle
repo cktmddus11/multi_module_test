@@ -1,15 +1,15 @@
 plugins {
     id 'sample.java17-conventions'
+    id 'sample.repositories'
+
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
-group 'org.example'
-version 'unspecified'
+group 'cals.quintet.crm'
+version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
+
 
 dependencies {
 

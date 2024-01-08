@@ -1,28 +1,18 @@
 plugins {
     id 'sample.java17-conventions'
+    id 'sample.repositories'
+
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
-
-
 }
 
 group 'cals.quintet.crm'
 version '1.0-SNAPSHOT'
 
-java {
-    sourceCompatibility = '17'
-}
 
 bootJar.enabled = false
 jar.enabled = true
 
-repositories {
-    // 넥서스
-    
-    maven { url "https://repo.spring.io/milestone" }
-    
-    mavenCentral()
-}
 
 dependencies {
     api 'org.springframework.boot:spring-boot-starter'

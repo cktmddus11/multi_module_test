@@ -7,9 +7,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.2.1'
+/*    implementation 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.2.1'
     testImplementation platform("org.spockframework:spock-bom:2.2-groovy-3.0")
-    testImplementation 'org.spockframework:spock-core'
+    testImplementation 'org.spockframework:spock-core'*/
 }
 
 tasks.named('test', Test) {
