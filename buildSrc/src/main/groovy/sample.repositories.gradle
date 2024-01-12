@@ -1,4 +1,5 @@
 repositories {
+    mavenLocal()
     flatDir {
         dirs 'shared/libs'
     }

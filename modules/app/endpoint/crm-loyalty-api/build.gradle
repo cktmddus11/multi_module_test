@@ -1,6 +1,7 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
+    id 'sample.spring3-conventions'
 
     id 'org.springframework.boot' version  '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
@@ -13,8 +14,10 @@ version '1.0-SNAPSHOT'
 dependencies {
 
     implementation project(':modules:app:business:loyalty')
-    implementation project(':modules:main-structure:framework:web')
-
+/*    implementation project(':modules:main-structure:framework:web')*/
+    implementation 'maestro.quintet.crm:framework-web:3.0.0'
+   // implementation 'maestro.quintet.crm:framework:1.0.0'
+    //implementation 'org.example:mapper:4.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'

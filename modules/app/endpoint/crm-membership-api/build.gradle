@@ -1,5 +1,6 @@
 plugins {
     id 'sample.java17-conventions'
+    id 'sample.spring3-conventions'
     id 'sample.repositories'
 
     id 'org.springframework.boot' version '3.1.4'
@@ -16,7 +17,8 @@ dependencies {
     implementation project(':modules:app:business:loyalty')
     implementation project(':modules:app:business:membership')
 
-    implementation project(':modules:main-structure:framework:web')
+    //implementation project(':modules:main-structure:framework:web')
+    // implementation 'cals.quintet.crm:framework:0.0.1-SNAPSHOT'
 
 
 

@@ -1,13 +1,16 @@
 plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
+    id 'sample.spring3-conventions'
+    id 'sample.publish-conventions'
+
 
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group 'cals.quintet.crm'
-version '1.0-SNAPSHOT'
+version '0.0.4-SNAPSHOT'
 
 
 bootJar.enabled = false
@@ -26,3 +29,19 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+//            groupId = 'cals.quintet.crm' // groupId
+//            artifactId = 'framework-web'           // artifactId
+//            version = '0.0.5-SNAPSHOT'       // version
+
+            from components.java
+        }
+    }
+}
+
+

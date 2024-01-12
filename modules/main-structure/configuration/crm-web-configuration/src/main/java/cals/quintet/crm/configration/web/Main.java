@@ -1,4 +1,4 @@
-package cals.quintet.crm;
+package cals.quintet.crm.configration.web;
 
 /**
  * @author ${USER}
