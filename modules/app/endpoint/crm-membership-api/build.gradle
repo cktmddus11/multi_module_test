@@ -17,10 +17,7 @@ dependencies {
     implementation project(':modules:app:business:loyalty')
     implementation project(':modules:app:business:membership')
 
-    //implementation project(':modules:main-structure:framework:web')
-    // implementation 'cals.quintet.crm:framework:0.0.1-SNAPSHOT'
-
-
+    implementation 'maestro.quintet.crm:framework:3.0.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'

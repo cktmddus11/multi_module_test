@@ -15,8 +15,8 @@ dependencies {
 
     implementation project(':modules:app:business:loyalty')
 /*    implementation project(':modules:main-structure:framework:web')*/
-    implementation 'maestro.quintet.crm:framework-web:3.0.0'
-   // implementation 'maestro.quintet.crm:framework:1.0.0'
+   // implementation 'maestro.quintet.crm:framework-web:3.0.0'
+    implementation 'maestro.quintet.crm:framework:3.0.0'
     //implementation 'org.example:mapper:4.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
