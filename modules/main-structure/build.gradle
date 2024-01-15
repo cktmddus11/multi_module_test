@@ -1,19 +1,16 @@
 plugins {
-    id 'java'
-}
-
-group 'cals.quintet.crm'
-version 'unspecified'
-
-repositories {
-    mavenCentral()
+    id 'sample.java17-conventions'
+    id 'sample.repositories'
 }
 
 dependencies {
+    api 'maestro.quintet.crm:framework:0.0.2';
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
+
+
 
 test {
     useJUnitPlatform()

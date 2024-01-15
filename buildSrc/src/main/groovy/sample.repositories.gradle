@@ -1,15 +1,18 @@
 repositories {
-    mavenLocal()
-    flatDir {
-        dirs 'shared/libs'
+
+    maven {
+        credentials {
+            username ""
+            password ""
+        }
+        url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
     }
-//    maven {
-//        credentials {
-//            username "crm-develop"
-//            password "CrmDevelop.!"
-//        }
-//        url "https://crm-devops.calsplatz.com:8088/repository/maven-public/"
-//    }
+    mavenLocal()
+
+/*    flatDir {
+        dirs 'shared/libs'
+    }*/
+
     maven { url "https://repo.spring.io/milestone" }
     mavenCentral()
 }

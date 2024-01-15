@@ -1,4 +1,4 @@
-package cals.quintet.crm.endpoint;
+package cals.quintet.crm;
 
 
 import org.springframework.boot.SpringApplication;
