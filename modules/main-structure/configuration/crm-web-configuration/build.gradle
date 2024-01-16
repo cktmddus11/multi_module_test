@@ -16,7 +16,7 @@ jar.enabled = true
 
 dependencies {
 
-    api 'maestro.quintet.crm.framework:framework-web:0.0.1'
+    api 'maestro.quintet.crm.framework:framework-web:0.0.1-SNAPSHOT'
     api 'org.springframework.boot:spring-boot-starter'
     api 'org.springframework.boot:spring-boot-starter-web'
 
