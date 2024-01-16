@@ -1,4 +1,5 @@
 repositories {
+    mavenLocal()
 
     maven {
         credentials {
@@ -7,7 +8,6 @@ repositories {
         }
         url "https://crm-devops.calsplatz.com:8088/repository/cals-crm-maven-repository-relaese/"
     }
-    mavenLocal()
 
 /*    flatDir {
         dirs 'shared/libs'
