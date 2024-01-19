@@ -2,6 +2,7 @@ plugins {
     id 'sample.java17-conventions'
     id 'sample.repositories'
     id 'sample.spring3-conventions'
+    id 'sample.lombok-conventions'
 
 
     id 'org.springframework.boot' version '3.1.4'
@@ -18,6 +19,10 @@ jar.enabled = true
 
 dependencies {
     implementation project(':modules:main-structure:configuration:crm-web-configuration')
+    implementation project(':modules:main-structure:configuration:crm-jpa-configuration')
+    implementation project(':modules:app:business:domain')
+
+
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'

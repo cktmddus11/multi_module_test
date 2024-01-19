@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: crm-loyalty-core
+  profiles:
+    default: local
+    active: ${spring.profiles.default}
+  config:
+    import:
+      - crm-database.yml
+      - crm-jpa.yml

@@ -1,0 +1,4 @@
+spring:
+  config:
+    import:
+      - crm-jpa-${spring.profiles.active}.yml

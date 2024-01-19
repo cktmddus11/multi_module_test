@@ -1,20 +1,24 @@
 plugins {
     id 'sample.java17-conventions'
+    id 'sample.repositories'
+    id 'sample.spring3-conventions'
+    id 'sample.lombok-conventions'
+
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
 
 }
 
-group 'org.example'
-version 'unspecified'
+group 'cals.quintet.crm'
+version '0.1.0'
 
-repositories {
-    mavenCentral()
-}
 bootJar.enabled = false
 jar.enabled = true
 
+
 dependencies {
+    implementation project(':modules:main-structure:configuration:crm-jpa-configuration')
+
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
