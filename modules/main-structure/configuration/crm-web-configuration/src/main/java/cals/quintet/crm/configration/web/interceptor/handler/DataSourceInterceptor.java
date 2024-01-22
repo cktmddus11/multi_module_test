@@ -3,8 +3,8 @@ package cals.quintet.crm.configration.web.interceptor.handler;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import maestro.quintet.crm.datasource.ClientDatabase;
-import maestro.quintet.crm.datasource.ClientRoutingDataSourceContextHolder;
+import maestro.quintet.crm.data.datasource.ClientDatabase;
+import maestro.quintet.crm.data.datasource.ClientRoutingDataSourceContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 

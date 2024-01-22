@@ -4,8 +4,8 @@ import cals.quintet.crm.configuration.datasource.properties.TenantADataSourcePro
 import cals.quintet.crm.configuration.datasource.properties.TenantBDataSourceProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import maestro.quintet.crm.datasource.ClientDataSouceRouter;
-import maestro.quintet.crm.datasource.ClientDatabase;
+import maestro.quintet.crm.data.datasource.ClientDataSouceRouter;
+import maestro.quintet.crm.data.datasource.ClientDatabase;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
