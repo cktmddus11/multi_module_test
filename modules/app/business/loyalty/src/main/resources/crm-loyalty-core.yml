@@ -6,5 +6,5 @@ spring:
     active: ${spring.profiles.default}
   config:
     import:
-      - crm-database.yml
       - crm-jpa.yml
+      - crm-tenant.yml

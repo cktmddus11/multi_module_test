@@ -1,6 +1,6 @@
 package cals.quintet.crm.business.approval.point.service;
 
-import cals.quintet.crm.business.approval.point.mapper.repository.PointRepository;
+import cals.quintet.crm.business.approval.point.repository.mapper.PointRepository;
 import cals.quintet.crm.business.approval.point.model.vo.PointAccrualRequestVo;
 import cals.quintet.crm.business.domain.entity.PointTransaction;
 import lombok.RequiredArgsConstructor;

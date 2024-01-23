@@ -1,6 +1,6 @@
 package cals.quintet.crm.jpa.configuration;
 
-import cals.quintet.crm.configuration.datasource.TenantRoutingDatabaseConfig;
+import cals.quintet.crm.configuration.datasource.TenantDatabaseBeanName;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -27,18 +28,16 @@ import java.util.Properties;
 @Slf4j
 @EntityScan(basePackages = "cals.quintet.crm.**.entity")
 @EnableJpaRepositories(
-        basePackages = "cals.quintet.crm.**.mapper.repository"  // 리포지토리 스캔 경로
+        basePackages = "cals.quintet.crm.**.repository.mapper"  // 리포지토리 스캔 경로
         //    transactionManagerRef = "transactionManager"
         //  entityManagerFactoryRef = "entityManagerFactory" // ㅇefault 값이라 삭제함
 )
 @RequiredArgsConstructor
 @Configuration
 public class JpaDataSourceConfig extends AbstractJpaConfig {
-    private final TenantRoutingDatabaseConfig dataSource;
-
     @Bean(name = "entityManagerFactory")
     @Override
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory (@Qualifier("routeDataSource") DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory (@Qualifier(TenantDatabaseBeanName.TENANT_DATASOURCE) DataSource dataSource) {
 
         log.info("============= jpaEntityManager Setting...  ==============");
 
@@ -49,10 +48,10 @@ public class JpaDataSourceConfig extends AbstractJpaConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
 
-        //        Properties jpaProperties = new Properties();
-        //        jpaProperties.put("hibernate.show_sql", "true");
-        //        jpaProperties.put("hibernate.hbm2ddl.auto", "update");
-        //        em.setJpaProperties(jpaProperties);
+                Properties jpaProperties = new Properties();
+                jpaProperties.put("hibernate.show_sql", "true");
+                jpaProperties.put("hibernate.hbm2ddl.auto", "update");
+                em.setJpaProperties(jpaProperties);
 
         log.info("============= jpaEntityManager Complete...  ==============");
 

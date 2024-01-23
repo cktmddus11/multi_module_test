@@ -1,4 +1,4 @@
-package cals.quintet.crm.configuration.datasource.properties;
+package cals.quintet.crm.tenant.datasource.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties(prefix = "datasource.tenant-a")
-public class TenantADataSourceProperties {
+@ConfigurationProperties(prefix = "datasource.main")
+public class MainDataSourceProperties {
     private String url;
     private String username;
     private String password;

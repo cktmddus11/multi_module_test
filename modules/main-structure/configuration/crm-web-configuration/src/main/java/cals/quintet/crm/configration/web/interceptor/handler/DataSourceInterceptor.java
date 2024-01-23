@@ -3,8 +3,8 @@ package cals.quintet.crm.configration.web.interceptor.handler;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import maestro.quintet.crm.data.datasource.ClientDatabase;
-import maestro.quintet.crm.data.datasource.ClientRoutingDataSourceContextHolder;
+import maestro.quintet.crm.data.datasource.TenantDatabase;
+import maestro.quintet.crm.data.datasource.TenantRoutingDataSourceContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -22,10 +22,10 @@ public class DataSourceInterceptor implements HandlerInterceptor {
 
         String tenantCode = request.getHeader("Tenant-Code");
 
-         if (ClientDatabase.TENANTA.toString().equalsIgnoreCase(tenantCode))
-            ClientRoutingDataSourceContextHolder.set(ClientDatabase.TENANTA);
+         if (TenantDatabase.TENANTA.toString().equalsIgnoreCase(tenantCode))
+            TenantRoutingDataSourceContextHolder.set(TenantDatabase.TENANTA);
         else
-            ClientRoutingDataSourceContextHolder.set(ClientDatabase.TENANTB);
+            TenantRoutingDataSourceContextHolder.set(TenantDatabase.TENANTB);
 
         log.info("============= dataSource interceptor End...  ==============");
 

@@ -19,6 +19,9 @@ dependencies {
 
     api 'maestro.quintet.crm.framework.framework-data:datasource:0.0.1-SNAPSHOT'
     api 'org.springframework.boot:spring-boot-starter'
+    api project(':modules:main-structure:configuration:crm-tenant-configuration') // datasource 빈사용을 위해서
+
+
 
     runtimeOnly 'com.mysql:mysql-connector-j:8.1.0'
 

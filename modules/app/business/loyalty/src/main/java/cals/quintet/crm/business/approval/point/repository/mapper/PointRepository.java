@@ -1,4 +1,4 @@
-package cals.quintet.crm.business.approval.point.mapper.repository;
+package cals.quintet.crm.business.approval.point.repository.mapper;
 
 import cals.quintet.crm.business.domain.entity.PointTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,6 +4,8 @@ rootProject.name = 'cals-platz-crm-sample'
 include 'modules:main-structure:configuration:crm-web-configuration'
 include 'modules:main-structure:configuration:crm-database-configuration'
 include 'modules:main-structure:configuration:crm-jpa-configuration'
+include 'modules:main-structure:configuration:crm-tenant-configuration'
+
 
 
 

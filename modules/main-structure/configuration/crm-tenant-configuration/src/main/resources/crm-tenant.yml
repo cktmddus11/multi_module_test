@@ -1,0 +1,4 @@
+spring:
+  config:
+    import:
+      - crm-tenant-${spring.profiles.active}.yml

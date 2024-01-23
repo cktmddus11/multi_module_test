@@ -1,0 +1,16 @@
+datasource:
+  main:
+    url: jdbc:mysql://localhost:3306/main
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+
+# JdbcTemplate logging level
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: debug

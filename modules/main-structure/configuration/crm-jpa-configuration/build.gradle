@@ -18,7 +18,7 @@ jar.enabled = true
 dependencies {
 
     api 'maestro.quintet.crm.framework.framework-data:jpa:0.0.1-SNAPSHOT' // framework jpa 호출
-    
+
     api project(':modules:main-structure:configuration:crm-database-configuration') // datasource 빈사용을 위해서
 
     api 'org.springframework.boot:spring-boot-starter'

@@ -22,6 +22,7 @@ dependencies {
     implementation project(':modules:main-structure:configuration:crm-jpa-configuration')
     implementation project(':modules:app:business:domain')
 
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
