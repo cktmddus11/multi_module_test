@@ -19,6 +19,8 @@ public class PointAccrualDto {
     public static class Request {
         private int pointAmount;
         private LocalDateTime accrualDate;
+
+        private int pntCnclVldDay;
     }
     @Getter
     @Builder

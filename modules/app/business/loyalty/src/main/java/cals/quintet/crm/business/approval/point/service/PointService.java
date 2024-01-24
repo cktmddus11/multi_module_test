@@ -1,10 +1,16 @@
 package cals.quintet.crm.business.approval.point.service;
 
-import cals.quintet.crm.business.approval.point.repository.mapper.PointRepository;
+import cals.quintet.crm.business.approval.point.model.vo.PointAccrualResponseVo;
+import cals.quintet.crm.business.approval.point.repository.mapper.crm.PointPolicyRepository;
+import cals.quintet.crm.business.approval.point.repository.mapper.loycore.PointRepository;
 import cals.quintet.crm.business.approval.point.model.vo.PointAccrualRequestVo;
-import cals.quintet.crm.business.domain.entity.PointTransaction;
+import cals.quintet.crm.business.domain.entity.crm.PointPolicy;
+import cals.quintet.crm.business.domain.entity.loycore.PointTransaction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.security.Policy;
 
 /**
  * @author sycha
@@ -15,15 +21,32 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class PointService {
+  //  private final PointSubService pointSubService;
+
     private final PointRepository pointRepository;
 
-    public Long pointAccrual (PointAccrualRequestVo requestVo) {
+    private final PointPolicyRepository pointPolicyRepository;
+
+    @Transactional
+    public PointAccrualResponseVo pointAccrual (PointAccrualRequestVo requestVo) {
         PointTransaction pointTransaction = PointTransaction.builder()
                 .acrlAmt(requestVo.getPointAmount())
                 .txnDt(requestVo.getAccrualDt())
                 .build();
         PointTransaction insertPntTxn = pointRepository.save(pointTransaction);
 
-        return insertPntTxn.getId();
+       // pointSubService.test(requestVo); // 테스트 완료 후 주석처리
+
+        PointPolicy pointPolicy = PointPolicy.builder()
+                .createDate(requestVo.getAccrualDt())
+                .pntCnclVldDay(requestVo.getPntCnclVldDay())
+                .build();
+        PointPolicy insertPntPlcy =pointPolicyRepository.save(pointPolicy);
+
+        return PointAccrualResponseVo.builder()
+                .pntTxnId(insertPntTxn.getId().intValue())
+                .pntPlcyId(insertPntPlcy.getId().intValue())
+                .build();
+
     }
 }

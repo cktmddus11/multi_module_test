@@ -1,6 +1,6 @@
 package cals.quintet.crm.configuration.jdbctemplate;
 
-import cals.quintet.crm.configuration.datasource.TenantDatabaseBeanName;
+import cals.quintet.crm.configuration.datasource.conts.TenantDataSourceBeanName;
 import maestro.quintet.crm.data.jdbctemplate.DefaultJdbcTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +17,11 @@ import javax.sql.DataSource;
 @Configuration
 public class TenantJdbcTemplateConfig implements DefaultJdbcTemplate {
 
-    @Bean(TenantDatabaseBeanName.TENANT_JDBCTEMPLATE)
-    public JdbcTemplate jdbcTemplate (@Qualifier(TenantDatabaseBeanName.TENANT_DATASOURCE) DataSource dataSource) {
+    @Bean(TenantDataSourceBeanName.TENANT_JDBCTEMPLATE)
+    public JdbcTemplate jdbcTemplate (@Qualifier(TenantDataSourceBeanName.CRM_TENANT_DATASOURCE) DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
+
     @Override
     public NamedParameterJdbcTemplate namedParameterJdbcTemplate (DataSource dataSource) {
         return null;

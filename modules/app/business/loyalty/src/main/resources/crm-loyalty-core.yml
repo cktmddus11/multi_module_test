@@ -8,3 +8,12 @@ spring:
     import:
       - crm-jpa.yml
       - crm-tenant.yml
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        transaction:
+          interceptor: trace

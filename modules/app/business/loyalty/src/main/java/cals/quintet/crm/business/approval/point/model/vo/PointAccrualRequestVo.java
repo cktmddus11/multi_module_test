@@ -16,4 +16,6 @@ public class PointAccrualRequestVo {
     private int pointAmount;
     private LocalDateTime accrualDt;
 
+    private int pntCnclVldDay;
+
 }
