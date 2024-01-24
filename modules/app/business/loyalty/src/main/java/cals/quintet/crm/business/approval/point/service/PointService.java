@@ -21,7 +21,7 @@ import java.security.Policy;
 @RequiredArgsConstructor
 @Service
 public class PointService {
-  //  private final PointSubService pointSubService;
+    private final PointSubService pointSubService;
 
     private final PointRepository pointRepository;
 

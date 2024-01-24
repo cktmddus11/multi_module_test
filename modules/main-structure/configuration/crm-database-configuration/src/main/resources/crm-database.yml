@@ -1,0 +1,4 @@
+spring:
+  config:
+    import:
+      - crm-database-${spring.profiles.active}.yml
