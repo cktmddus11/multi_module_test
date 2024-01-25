@@ -1,10 +1,12 @@
 package cals.quintet.crm.jpa.configuration;
 
 import cals.quintet.crm.configuration.datasource.conts.TenantDataSourceBeanName;
+import cals.quintet.crm.jpa.configuration.interceptor.JpaInterceptor;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import maestro.quintet.crm.data.jpa.AbstractJpaConfig;
+import org.hibernate.cfg.AvailableSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -17,6 +19,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * @author sycha
@@ -43,6 +46,10 @@ public class JpaLoyCoreDataSourceConfig extends AbstractJpaConfig {
         em.setDataSource(dataSource);
         em.setPackagesToScan("cals.quintet.crm.business.domain.entity.loycore");
 
+        Properties jpaProperties = new Properties();
+        jpaProperties.put(AvailableSettings.STATEMENT_INSPECTOR, JpaInterceptor.class);
+        em.setJpaProperties(jpaProperties);
+
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
 
@@ -57,7 +64,7 @@ public class JpaLoyCoreDataSourceConfig extends AbstractJpaConfig {
     @Override
     public PlatformTransactionManager transactionManager (
             @Autowired @Qualifier(TenantDataSourceBeanName.LOY_COORE_ENTITY_MANAGER_FACTORY) EntityManagerFactory entityManagerFactory) {
-        log.info("============= loycore transactionManager Setting...  ==============");
+        log.info("============= loycore transactionManager Complete...  ==============");
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;

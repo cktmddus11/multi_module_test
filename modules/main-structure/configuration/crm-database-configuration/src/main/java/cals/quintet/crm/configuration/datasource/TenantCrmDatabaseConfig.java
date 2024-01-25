@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.yaml.snakeyaml.util.EnumUtils;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -69,11 +70,13 @@ public class TenantCrmDatabaseConfig {
                     .url(datasourceVo.getUrl())
                     .username(datasourceVo.getUsername())
                     .password(datasourceVo.getPassword());
-            TenantDatabase tenantDatabase = TenantDatabase.convertEumCode(datasourceVo.getTenantCode());
+
+            TenantDatabase tenantDatabase = TenantDatabase.valueOf(datasourceVo.getTenantCode());
+          //  TenantDatabase tenantDatabase = TenantDatabase.convertEumCode(datasourceVo.getTenantCode());
 
             targetDataSource.put(tenantDatabase, dataSourceBuilder.build());
 
-            log.info(tenantDatabase.getTenantCode() + " : " + datasourceVo.getUrl());
+            log.info(tenantDatabase.getTenantSchemaNm() + " : " + datasourceVo.getUrl());
         }
         return targetDataSource;
     }

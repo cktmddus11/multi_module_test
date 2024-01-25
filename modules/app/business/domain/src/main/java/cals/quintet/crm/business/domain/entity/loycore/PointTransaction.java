@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
-@Table(name = "PNT_TXN")
+@Table(name = "PNT_TXN" , catalog = "#TENANT#_loycore")
 @Entity
 public class PointTransaction {
 

@@ -27,6 +27,8 @@ public class DataSourceInterceptor implements HandlerInterceptor {
         else
             TenantRoutingDataSourceContextHolder.set(TenantDatabase.TENANTB);
 
+        log.info("datasource import : "+tenantCode);
+
         log.info("============= dataSource interceptor End...  ==============");
 
 

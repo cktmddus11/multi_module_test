@@ -24,7 +24,7 @@ public class DatasourceChainnedTransactionManager {
             @Qualifier(TenantDataSourceBeanName.DATASOURCE_CRM_TRANSACTION_MANAGER_FACTORY) PlatformTransactionManager crmDbTransactionManager,
             @Qualifier(TenantDataSourceBeanName.DATASOURCE_LOY_CORE_TRANSACTION_MANAGER_FACTORY) PlatformTransactionManager loycoreDbTransactionManager) {
 
-        log.info("=============== datasource chainedTransactionManager Complete =================== ");
+        log.info("=============== datasource chainedTransactionManager Complete...  =================== ");
 
         return new ChainedTransactionManager(crmDbTransactionManager, loycoreDbTransactionManager);
     }

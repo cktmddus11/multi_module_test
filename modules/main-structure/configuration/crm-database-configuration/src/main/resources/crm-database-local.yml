@@ -5,3 +5,11 @@ decorator:
     p6spy:
       enable-logging: true
     enabled: true
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+        HikariConfig: DEBUG
+

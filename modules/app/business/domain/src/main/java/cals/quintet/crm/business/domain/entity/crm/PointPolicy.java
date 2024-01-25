@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
-@Table(name = "PNT_PLCY")
+@Table(name = "PNT_PLCY", catalog = "#TENANT#_crm")
 @Entity
 public class PointPolicy {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 데이터베이스 자동증가 열을 사용하여 증감하도록
