@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.yaml.snakeyaml.util.EnumUtils;
 
@@ -32,7 +33,7 @@ import java.util.Map;
 public class TenantCrmDatabaseConfig {
     private final MetaDataSourceSearchService metaDataSourceSearchService;
 
-    @Lazy
+    //@Lazy
     @Bean(name = TenantDataSourceBeanName.CRM_TENANT_DATASOURCE)
     public DataSource dataSource () throws Exception {
         log.info("============= tenant Crm dataSource Setting...  ==============");

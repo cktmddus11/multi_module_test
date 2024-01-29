@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -31,7 +32,7 @@ import java.util.Map;
 public class TenantLoyCoreDatabaseConfig {
     private final MetaDataSourceSearchService metaDataSourceSearchService;
 
-    @Lazy
+    //@Lazy
     @Bean(name= TenantDataSourceBeanName.LOYCORE_TENANT_DATASOURCE)
     public DataSource dataSource() throws Exception {
         log.info("============= tenant LoyCore dataSource Setting...  ==============");
