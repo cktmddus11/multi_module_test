@@ -10,10 +10,12 @@ import lombok.Getter;
 public class TenantDataSourceBeanName {
 
     private static final String TENANT = "tenant";
-    private static final String LOYCORE_DB = "LoyCore";
-    private static final String CRM_DB = "Crm";
+    private static final String LOYCORE_DB = "loycore";
+    private static final String CRM_DB = "crm";
     private static final String TENANT_DATASOURCE = TENANT + "DataSource";
     public static final String TENANT_JDBCTEMPLATE = TENANT + "JdbcTemplate";
+    private static final String ENTITY_MANAGER = "EntityManager";
+    private static final String QUERY_FACTORY = "QueryFactory";
 
     public static final String LOY_CORE_TRANSACTION_MANAGER_FACTORY = LOYCORE_DB + "TransactionManagerFactory";
     public static final String CRM_TRANSACTION_MANAGER_FACTORY = CRM_DB + "TransactionManagerFactory";
@@ -37,6 +39,13 @@ public class TenantDataSourceBeanName {
 
     public static final String JPA_LOY_CORE_TRANSACTION_MANAGER_FACTORY = "jpa" + LOY_CORE_TRANSACTION_MANAGER_FACTORY;
     public static final String JPA_CRM_TRANSACTION_MANAGER_FACTORY = "jpa" + CRM_TRANSACTION_MANAGER_FACTORY;
+
+    public static final String CRM_ENTITY_MANAGER = CRM_DB + ENTITY_MANAGER;
+    public static final String LOYCORE_ENTITY_MANAGER = LOYCORE_DB + ENTITY_MANAGER;
+
+    public static final String CRM_QUERY_FACTORY = CRM_DB+QUERY_FACTORY;
+
+    public static final String LOYCORE_QUERY_FACTORY = LOYCORE_DB+QUERY_FACTORY;
 
 
 }

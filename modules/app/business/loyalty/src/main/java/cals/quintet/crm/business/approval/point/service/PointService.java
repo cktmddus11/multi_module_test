@@ -1,6 +1,7 @@
 package cals.quintet.crm.business.approval.point.service;
 
 import cals.quintet.crm.business.approval.point.model.vo.PointAccrualResponseVo;
+import cals.quintet.crm.business.approval.point.repository.mapper.crm.PointPolicyQueryDslRepository;
 import cals.quintet.crm.business.approval.point.repository.mapper.crm.PointPolicyRepository;
 import cals.quintet.crm.business.approval.point.repository.mapper.loycore.PointRepository;
 import cals.quintet.crm.business.approval.point.model.vo.PointAccrualRequestVo;
@@ -27,6 +28,9 @@ public class PointService {
 
     private final PointPolicyRepository pointPolicyRepository;
 
+
+    private final PointPolicyQueryDslRepository pointPolicyQueryDslRepository;
+
     @Transactional
     public PointAccrualResponseVo pointAccrual (PointAccrualRequestVo requestVo) {
         PointTransaction pointTransaction = PointTransaction.builder()
@@ -48,5 +52,9 @@ public class PointService {
                 .pntPlcyId(insertPntPlcy.getId().intValue())
                 .build();
 
+    }
+
+    public Long countByPointPolicy(){
+        return pointPolicyQueryDslRepository.countByPointPolicy();
     }
 }

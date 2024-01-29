@@ -41,4 +41,7 @@ public class PointApiService {
                 .isSuccess(isSucess)
                 .build();
     }
+    public Long countByPointPolicy(){
+        return pointService.countByPointPolicy();
+    }
 }

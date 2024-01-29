@@ -31,6 +31,12 @@ public class PointApiController {
         return pointApiService.pointAccrual(requestData);
     }
 
+    @PostMapping("/pointPolicyCount")
+    public @ResponseBody Long pointPolicyCount (@RequestHeader(value="Tenant-Code", required = true) String tenantCode){
+        // 테넌트 로그 추가
+        return pointApiService.countByPointPolicy();
+    }
+
 
 
 }

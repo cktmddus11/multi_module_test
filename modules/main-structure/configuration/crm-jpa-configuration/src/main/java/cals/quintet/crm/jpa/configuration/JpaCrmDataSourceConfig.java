@@ -2,6 +2,8 @@ package cals.quintet.crm.jpa.configuration;
 
 import cals.quintet.crm.configuration.datasource.conts.TenantDataSourceBeanName;
 import cals.quintet.crm.jpa.configuration.interceptor.JpaInterceptor;
+import com.querydsl.jpa.JPQLQueryFactory;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,6 +47,7 @@ public class JpaCrmDataSourceConfig extends AbstractJpaConfig {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
         em.setPackagesToScan("cals.quintet.crm.business.domain.entity.crm");
+        em.setPersistenceUnitName(TenantDataSourceBeanName.CRM_ENTITY_MANAGER);
 
         Properties jpaProperties = new Properties();
         jpaProperties.put(AvailableSettings.STATEMENT_INSPECTOR, JpaInterceptor.class);
@@ -67,6 +70,9 @@ public class JpaCrmDataSourceConfig extends AbstractJpaConfig {
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
     }
+
+
+
 
 
 }
