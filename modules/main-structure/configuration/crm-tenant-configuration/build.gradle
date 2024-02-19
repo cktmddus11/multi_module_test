@@ -17,7 +17,7 @@ jar.enabled = true
 
 dependencies {
     implementation project(':modules:main-structure:configuration:crm-web-configuration')
-    api 'maestro.quintet.crm.framework.framework-data:datasource:0.0.1-SNAPSHOT'
+    api 'maestro.quintet.crm.framework.framework-data:datasource:0.0.2-SNAPSHOT'
 
     runtimeOnly 'com.mysql:mysql-connector-j:8.1.0'
 
